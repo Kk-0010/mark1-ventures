@@ -1,12 +1,96 @@
-# React + Vite
+# MARK 1 Ventures — Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Marketing website for **MARK 1**: “Capital . Cloud . Confidence” — investors, mentors, and builders of AI/SaaS/data ecosystems.
 
-Currently, two official plugins are available:
+Built with **Vite + React**, **React Router**, **Tailwind CSS**, and a **Formspree** contact form.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech stack
 
-## Expanding the ESLint configuration
+- **Vite** (dev server, build)
+- **React 19**
+- **React Router** (nested routes)
+- **Tailwind CSS v4** (via `@tailwindcss/vite`)
+- **shadcn/ui + Radix UI** components (see `components.json`)
+- **ESLint** (flat config)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Routes
+
+The router is defined in `src/main.jsx`.
+
+- `/` — Home
+- `/about`
+- `/investment-and-mentorship`
+- `/data-services`
+- `/cloud-and-hosting`
+- `/outsourcing`
+- `/technology-services`
+- `/office-and-workspace`
+- `/why-mark-one`
+- `/contact`
+
+## Getting started
+
+### Prerequisites
+
+- Node.js (recommended: latest LTS)
+
+### Install
+
+```bash
+npm install
+```
+
+### Run locally
+
+```bash
+npm run dev
+```
+
+Vite will print the local URL in the terminal.
+
+### Build
+
+```bash
+npm run build
+```
+
+### Preview production build
+
+```bash
+npm run preview
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Configuration
+
+### Formspree (Contact form)
+
+The contact form uses Formspree via `@formspree/react`.
+
+Update the placeholder Formspree ID in `src/components/Contact/ContactForm.jsx`:
+
+```js
+const [state, handleSubmit] = useForm("your-form-id-here");
+```
+
+Replace `"your-form-id-here"` with your real Formspree form ID.
+
+## Project structure
+
+```text
+src/
+  components/         Shared components (Header, Footer, ContactForm, UI)
+  pages/              Route pages (Home, About, Contact, etc.)
+  assets/             Images/icons
+  lib/                Shared utilities (see alias below)
+  constants.js        Site copy/content and nav definitions
+```
+
+## Path aliases
+
+The project defines `@` as an alias to `src/` in `vite.config.js`, so imports like `@/components/...` work out of the box.
